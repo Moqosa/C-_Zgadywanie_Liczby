@@ -1,0 +1,33 @@
+using namespace std;
+
+int liczba;
+int zgadniecie_uzytkownika;
+int liczba_prob = 1;
+int main() {
+    cout<<"Wygeneruje losowa liczbe od 1 do 100 a ty musisz ją zgadnac!"<<endl;
+    srand(time(NULL));
+    liczba = rand()%100+1;
+
+    while (zgadniecie_uzytkownika!=liczba){
+        cout<<"Podaj liczbe:";
+        cin>>zgadniecie_uzytkownika;
+
+        if(liczba>zgadniecie_uzytkownika){
+            cout<<"Liczba jest wieksza!"<<endl;
+            liczba_prob++;
+            continue;
+        }
+        if(liczba<zgadniecie_uzytkownika){
+            cout<<"Liczba jest mniejsza!"<<endl;
+            liczba_prob++;
+            continue;
+        }
+        else{
+            cout<<"Gratuluje zgadles!, podana liczba to "<<liczba<<endl;
+            cout<<"Zrobiles to za pomoca "<<liczba_prob<<" prob";
+        }
+    }
+
+    system("pause");
+    return 0;
+}
